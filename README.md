@@ -1,6 +1,6 @@
 # Build Json filter plugin for Embulk
 
-TODO: Write short description here and build.gradle file.
+Build JSON object with JSON template.
 
 ## Overview
 
@@ -8,19 +8,21 @@ TODO: Write short description here and build.gradle file.
 
 ## Configuration
 
-- **option1**: description (integer, required)
-- **option2**: description (string, default: `"myvalue"`)
-- **option3**: description (string, default: `null`)
+- **column**: description (integer, required)
+  - **name**: The name of output column_name (string, default: `"json_payload"`)
+  - **type**: Column type (`json` or `string`, default: `json`)
+  - **template**: JSON template (The `!column_name`` parameter replace column value)
 
 ## Example
 
 ```yaml
 filters:
   - type: build_json
-    option1: example1
-    option2: example2
+    column:
+      name: json_payload
+      type: json
+      template: '{"long": [!id,!account,"test"], "name":!comment}'
 ```
-
 
 ## Build
 
