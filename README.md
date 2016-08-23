@@ -11,7 +11,7 @@ Build JSON object with JSON template.
 - **column**: description (integer, required)
   - **name**: The name of output column_name (string, default: `"json_payload"`)
   - **type**: Column type (`json` or `string`, default: `json`)
-  - **template**: JSON template (The `!column_name`` parameter replace column value)
+  - **template**: JSON template (The `!column_name` parameter replace column value)
 
 ## Example
 
